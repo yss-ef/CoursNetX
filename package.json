@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "chai": "^4.5.0",
+    "ganache": "^7.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}

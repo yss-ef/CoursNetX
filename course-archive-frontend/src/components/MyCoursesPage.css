@@ -1,0 +1,249 @@
+:root {
+  --primary: #502f4c; /* Deep Plum */
+  --secondary: #f7fff7; /* Soft White */
+  --accent: #7d8cc4; /* Muted Blue */
+  --text-dark: #2e2e2e;
+  --text-light: #f7fff7;
+  --shadow: rgba(80, 47, 76, 0.2);
+  --gradient: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+.courses-title {
+  font-size: 2.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-item {
+  background-color: var(--secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.course-filiere {
+  font-size: 1rem;
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+.course-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.ipfs-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.ipfs-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.action-button:hover {
+  color: var(--primary);
+}
+
+.action-button.delete {
+  color: #b71c1c;
+}
+
+.action-button.delete:hover {
+  color: #d32f2f;
+}
+
+.edit-form,
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-input {
+  padding: 0.75rem;
+  border: 1px solid var(--text-dark);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(125, 140, 196, 0.3);
+  outline: none;
+}
+
+.input-error {
+  border-color: #b71c1c;
+}
+
+.input-error-message {
+  color: #b71c1c;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.edit-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.save-button,
+.cancel-button {
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover,
+.cancel-button:hover {
+  background: linear-gradient(45deg, #6b7ab0, var(--accent));
+  transform: scale(1.05);
+}
+
+.cancel-button {
+  background: #b71c1c;
+}
+
+.cancel-button:hover {
+  background: #d32f2f;
+}
+
+.save-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message,
+.loading-message,
+.no-courses-message {
+  text-align: center;
+  font-size: 1rem;
+  margin: 1.5rem 0;
+}
+
+.error-message {
+  color: #b71c1c;
+  background-color: rgba(183, 28, 28, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.loading-message {
+  color: var(--primary);
+}
+
+.no-courses-message {
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+/* Styles pour la barre de recherche */
+.search-container {
+  max-width: 750px;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text-dark);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(125, 140, 196, 0.3);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .courses-title {
+    font-size: 1.75rem;
+  }
+
+  .course-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-title {
+    font-size: 1.5rem;
+  }
+
+  .course-item {
+    padding: 1rem;
+  }
+
+  .course-title {
+    font-size: 1.1rem;
+  }
+
+  .save-button,
+  .cancel-button,
+  .edit-input {
+    font-size: 0.95rem;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+  }
+}

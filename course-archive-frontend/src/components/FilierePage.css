@@ -1,0 +1,233 @@
+/* FilierePage Styles */
+
+.courses-title {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.search-filter-container {
+  width: 750px;
+  margin: 1rem auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text-dark);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(125, 140, 196, 0.3);
+  outline: none;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-item {
+  background-color: var(--secondary);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid var(--primary);
+}
+
+.course {
+  margin-bottom: 25px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.course-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.course-item.selected {
+  background: var(--gradient);
+  color: var(--text-light);
+}
+
+.course-button {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-left: 5px solid var(--primary);
+}
+
+.course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.copyable-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.copy-button:hover {
+  color: var(--primary);
+}
+
+.back-button {
+  background: var(--gradient);
+  color: var(--text-light);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: linear-gradient(45deg, #6b7ab0, var(--accent));
+  transform: scale(1.05);
+}
+
+.back-button:disabled {
+  background: var(--text-dark);
+  cursor: not-allowed;
+}
+
+.message-wrapper {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.message-container {
+  display: none;
+}
+
+.message-container.visible {
+  display: block;
+}
+
+.loading-message,
+.error-message,
+.no-filiere-message,
+.no-courses-message {
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.loading-message {
+  color: var(--primary);
+}
+
+.error-message {
+  color: #b71c1c;
+  background-color: rgba(183, 28, 28, 0.1);
+}
+
+.no-filiere-message,
+.no-courses-message {
+  color: var(--text-dark);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.pagination-button {
+  background: var(--gradient);
+  color: var(--text-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-button:hover {
+  background: linear-gradient(45deg, #6b7ab0, var(--accent));
+  transform: scale(1.05);
+}
+
+.pagination-button:disabled {
+  background: var(--text-dark);
+  cursor: not-allowed;
+}
+
+.pagination-button.active {
+  background: var(--accent);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses-container {
+    padding: 1rem;
+  }
+
+  .courses-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .course-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-title {
+    font-size: 1.5rem;
+  }
+
+  .search-input,
+  .back-button {
+    font-size: 0.9rem;
+  }
+
+  .pagination-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

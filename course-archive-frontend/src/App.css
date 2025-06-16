@@ -1,0 +1,344 @@
+/* Color Palette */
+:root {
+  --primary: #502f4c; /* Deep Plum */
+  --secondary: #f7fff7; /* Soft White */
+  --accent: #7d8cc4; /* Muted Blue */
+  --text-dark: #2e2e2e;
+  --text-light: #f7fff7;
+  --shadow: rgba(80, 47, 76, 0.2);
+  --gradient: linear-gradient(45deg, var(--primary), var(--accent));
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0; /* Assure qu'aucun padding ne bloque les marges de la navbar */
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(45deg, rgba(80, 47, 76, 0.85), rgba(125, 140, 196, 0.85)); /* Gradient semi-transparent */
+  padding: 1.25rem 2rem;
+  box-shadow: 0 4px 8px var(--shadow);
+  border-radius: 12px; /* Coins arrondis */
+  margin: 0.75rem 0.75rem 0; /* Marge en haut et centrage */
+  backdrop-filter: blur(5px); /* Effet de flou */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-content-dis {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.navbar-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+.navbar-title {
+  color: var(--text-light);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
+  flex: 1;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Welcome Card */
+.welcome-card {
+  background-color: var(--secondary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--shadow);
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--secondary), var(--secondary)), var(--gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid var(--primary);
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.home-title {
+  font-size: 2.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.welcome-text {
+  font-size: 1.15rem;
+  margin: 0.75rem 0;
+}
+
+.welcome-subtext {
+  font-size: 1rem;
+  color: var(--text-dark);
+  opacity: 0.9;
+  margin-top: 1.25rem;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Role Styling */
+.role {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.role.admin {
+  color: var(--accent);
+}
+
+.role.teacher {
+  color: var(--accent);
+}
+
+.role.student {
+  color: var(--accent);
+}
+
+.role.unknown {
+  color: var(--accent);
+}
+
+/* Buttons */
+.connect-button,
+.disconnect-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.connect-button {
+  background: var(--gradient);
+  color: var(--text-light);
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.connect-button:hover {
+  background: linear-gradient(45deg, #6b7ab0, var(--accent));
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.disconnect-button {
+  background-color: transparent;
+  color: var(--text-light);
+}
+
+.disconnect-button:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.error-message {
+  color: #b71c1c;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  background-color: rgba(183, 28, 28, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.loading-spinner p {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+/* Home Page */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+/* Toastify Overrides */
+.Toastify__toast {
+  border-radius: 8px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.Toastify__toast--success {
+  background-color: var(--accent) !important;
+}
+
+.Toastify__toast--error {
+  background-color: #b71c1c !important;
+}
+
+.Toastify__toast--info {
+  background-color: var(--primary) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    margin: 1rem 1.5rem 0;
+    width: calc(100% - 3rem);
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.75rem;
+  }
+
+  .welcome-card {
+    padding: 2rem;
+  }
+
+  .connect-button,
+  .disconnect-button {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin: 1rem 1rem 0;
+    width: calc(100% - 2rem);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar-title {
+    font-size: 1.3rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .connect-button,
+  .disconnect-button {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .navbar-links {
+    gap: 0.75rem;
+  }
+}
+.private-key-input {
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid var(--text-dark);
+  border-radius: 8px;
+  width: 80%;
+  font-size: 1rem;
+}
