@@ -1,7 +1,5 @@
 # CoursNetX - Application Décentralisée d'Archivage de Cours
 
-![CoursNetX Showcase](https://user-images.githubusercontent.com/LINK_TO_AN_IMAGE_OR_GIF_OF_YOUR_APP)
-
 ## 📖 À propos du projet
 
 **CoursNetX** est une application décentralisée (dApp) développée dans le cadre de mon Projet de Fin d'Études pour la Licence en Ingénierie Logicielle à la FST d'Errachidia (noté **17/20**).
